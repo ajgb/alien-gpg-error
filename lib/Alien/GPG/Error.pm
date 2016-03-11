@@ -19,7 +19,7 @@ __END__
     
 =head1 DESCRIPTION
 
-Alien::GPG::Error installs the C library C<libgpg-error>.
+Alien::GPG::Error installs the C library C<libgpg-error> v1.21.
 
 =head1 SEE ALSO
 
