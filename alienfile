@@ -1,0 +1,20 @@
+use alienfile;
+
+plugin 'Probe::CommandLine' => (
+  command   => 'gpg-error',
+  secondary => 1,
+);
+
+share {
+
+  plugin Download => (
+    url     => 'https://gnupg.org/download/index.html#libgpg-error',
+    version => qr/^libgpg-error-([0-9\.]+)\.tar\.bz2$/,
+  );
+
+  plugin Extract => 'tar.gz';
+
+  plugin 'Build::Autoconf' => ();
+
+};
+
