@@ -14,7 +14,13 @@ share {
 
   plugin Extract => 'tar.gz';
 
-  plugin 'Build::Autoconf' => ();
+  plugin 'Build::Autoconf';
+
+  gather [
+    [ 'gpg-error-config', '--version', \'%{.runtime.version}' ],
+    [ 'gpg-error-config', '--cflags',  \'%{.runtime.cflags}'  ],
+    [ 'gpg-error-config', '--libs',    \'%{.runtime.libs}'    ],
+  ];
 
 };
 
